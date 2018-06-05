@@ -1,0 +1,12 @@
+.header h1 {
+  color: white;
+  font-weight: bolder;
+  float: left; }
+
+.header ul {
+  float: right; }
+  .header ul li {
+    float: left; }
+    .header ul li a {
+      text-decoration: none;
+      color: white; }

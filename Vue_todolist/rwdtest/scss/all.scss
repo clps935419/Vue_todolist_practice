@@ -1,0 +1,323 @@
+@import "_reset";
+@import "layout";
+@import "grid";
+
+//index開始
+.index{
+    background: #efe9e7;
+    height: 600px;
+    @include ipone{
+        height: auto;
+        width: 100%;
+    }
+    .title{
+        text-align: center;
+        padding-top: 20px;
+        
+        h2{
+            @include m-font;
+            display: inline-block;
+            font-weight: bolder;
+            
+        }
+        hr{
+            margin-bottom: 20px;
+            @include ipone{
+                display: none;
+            }
+        }
+    }
+    .list-feature{
+        text-align: center;
+        margin-top: 30px;
+        
+        li{
+            float: left;
+            width: 20%;
+            margin: 0 6%;
+            @include ipone{
+                float: none;
+                margin: 20px 0;
+                width: 95%;
+                padding-bottom: 20px;
+                margin: 0 2.5%;
+            }
+            img{
+                border-radius:50%;
+                margin-bottom: 15px;
+            }
+            span{
+                @include m-font;
+                font-weight: bolder;
+            }
+            p{
+                @include s-font;
+                text-align: left;
+                @include ipone{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+.index2{
+    height: 460px;
+    background: #3d1101;
+    width: 100%;
+    @include ipone{
+        height: auto;
+        width: 100%;
+    }
+    ul{
+        width: 70%;
+        margin: 0 auto;
+        @include ipone{
+            height: auto;
+            margin: 0;
+            width: 100%;
+            padding: 10px 0;
+        }
+        li{
+            float: left;
+            width: 45%;
+            color:white;
+            margin: 0 1%;
+            @include ipone{
+                float:none;
+                width: 90%;
+                margin: 0 5%;
+                img{
+                    max-width: 100%;
+                }
+            }
+            h3{
+                margin-top: 70px;
+                @include ipone{
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+.index3{
+    background: #efe9e7;
+    height: 350px;
+    width: 100%;
+    @include ipone{
+        height: auto;
+        width: 100%;
+    }
+    h2{
+        @include m-font;
+        padding: 50px 0;
+        text-align: center;
+        font-weight: bolder;
+    }
+    ul{
+        width: 90%;
+        margin: 0 auto;
+        li{
+            float: left;
+            width: 25%;
+            margin: 0 4.1%;
+            @include ipone{
+                float: none;
+                width: 90%;
+                margin: 0 5%;
+            }
+            img{
+                border-radius:50%;
+                @include ipone{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            .textarea{
+                float: right;
+                width: 100%;
+                padding-right:10px; 
+                @include ipone{
+                    float: none;
+                    padding: 0;
+                    padding: 15px;
+                    width: 100%;
+                }
+                span{
+                    @include ipone{
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            .name{
+                    padding-left: 60%
+                }
+            }
+        }
+    }
+}
+.index4{
+    width: 100%;
+    height: 530px;
+    background: #f6f4f3;
+    @include ipone{
+        width: 100%;
+        height: auto;
+    }
+    h3{
+        text-align: center;
+        @include m-font;
+        padding:50px;
+        font-weight: bolder; 
+    }
+    ul{
+        width: 50%;
+        margin: 0 auto;
+        @include ipone{
+            width: 100%;
+            margin: 0;
+            padding-bottom: 15px;
+        }
+        li{
+            float: left;
+            margin-left: 20px;
+            @include ipone{
+                float: none;
+                width: 90%;
+                margin: 0 5%;
+            }
+           img{
+               max-width: 100%;
+           }
+            form{
+                width: 250px;
+                @include ipone{
+                    width: 100%;
+                }
+                    label{
+                        @include s-font;
+                        font-weight: bolder;
+                    }
+                    input{}    
+            }
+            
+        }
+    }
+}
+//購物車頁開始
+.content{
+    background: #efe9e7;
+}
+.menu{
+    margin-top: 50px;
+    float: left;
+    width: 15%;
+    padding-left: 15%;
+   
+    @include ipone{
+        float: none;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        margin-top: -1px;
+    }
+    h3{
+        @include larg-font;
+        padding: 20px 0;
+        font-weight:bolder;    
+    }
+    ul{
+        li{
+            a{
+                @include m-font;
+                text-decoration: none;
+                font-weight:bolder;
+                display: block;
+                border-bottom: 1px solid #3d1101;
+                padding: 10px 0;
+            }
+            a:hover{
+                background: #3d1101;
+                color: white;
+            }
+        }
+    }
+}
+.cartshow{
+    margin-top: 50px;
+    margin-left: 2%;
+    float: left;
+    width: 68%;
+    @include ipone{
+        width: 100%;
+        margin:50px 0;
+    }
+    input{
+        margin-left: 2%;
+        width: 80%;
+        @include ipone{
+            width: 80%;
+            margin: 10px auto;
+            display: block;
+        }
+    }
+    .buybutt{
+        width: 10%;
+        background: #efe9e7;
+        @include s-font;
+        font-weight: bolder;
+        border: 1px solid;
+        @include ipone{
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+        }
+    }
+    .cartlist{
+        margin-top: 20px;
+        li{
+            float: left;
+            width: 29%;
+            box-shadow: 5px 5px 5px #888888;
+            margin-left: 2%;
+            margin-top: 2%;
+            text-align: center;
+            @include ipone{
+                float:none;
+                width: 100%;
+                margin-left: 0;
+            }
+            img{
+                max-width: 100%;
+            }
+            h4{
+                @include m-font;
+                font-weight: bolder;
+                padding: 5px 0;
+                span{
+                    @include s-font;
+                }
+            }
+            span{
+                @include s-font;
+                font-weight: bolder;
+                display: block;
+                padding: 5px 0;
+            }
+            button{
+                width: 90%;
+                color: #ff5e45;
+                border: 1px solid;
+                font-weight: bolder;
+                background: #efe9e7;
+                margin: 5%;
+
+            }
+            hr{
+                width: 100px;
+                background: #3d1101;
+                height: 1.2px;
+            }
+            
+        }
+    }
+}
