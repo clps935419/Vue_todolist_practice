@@ -48,6 +48,34 @@ table {
 .clear {
   clear: both; }
 
+.yellow {
+  color: #F5A623; }
+
+.fade-enter-active, .fade-leave-active {
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s; }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0; }
+
+.disappear {
+  display: none; }
+
+.bg-box.m-top {
+  margin-top: 20px; }
+
+.checkbox {
+  width: 20px;
+  height: 20px; }
+
+.complete {
+  text-decoration: line-through; }
+
+.active {
+  color: white;
+  border-bottom: black 2px solid; }
+
 .wrap .header {
   width: 100%;
   height: 80px;
@@ -68,9 +96,6 @@ table {
         height: 78px;
         width: 150px;
         text-align: center; }
-      .wrap .header ul li a:hover {
-        color: white;
-        border-bottom: black 2px solid; }
 
 .wrap .container {
   width: 100%;
@@ -79,21 +104,25 @@ table {
   padding-bottom: 300px; }
   .wrap .container ::-webkit-input-placeholder {
     color: #C8C8C8; }
+  .wrap .container .slidebox {
+    width: 40%;
+    background: #F2F2F2;
+    margin: 0 auto;
+    margin-top: 20px; }
+    .wrap .container .slidebox i {
+      padding: 20px; }
   .wrap .container .bg-box {
     width: 40%;
     background: #F2F2F2;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-top: 20px; }
     .wrap .container .bg-box .bg-title {
       height: 76px;
       font-size: 24px;
       font-weight: bolder;
       line-height: 76px;
-      margin: 10px 0;
       border-bottom: black solid 1px;
       padding-left: 20px; }
-      .wrap .container .bg-box .bg-title input {
-        width: 15px;
-        height: 15px; }
       .wrap .container .bg-box .bg-title .icon {
         float: right;
         padding-right: 10px;

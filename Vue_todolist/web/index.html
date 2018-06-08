@@ -13,28 +13,33 @@
     <div class="wrap" id="app">
         <div class="header">
             <ul>
-                <li><a href="#">My Task</a></li>
-                <li><a href="#">In Progress</a></li>
-                <li><a href="#">Completed</a></li>
+                <li><a href="#" :class="{'active':visability=='all'}" @click="visability='all'">My Task</a></li>
+                <li><a href="#" :class="{'active':visability=='act'}" @click="visability='act'">In Progress</a></li>
+                <li><a href="#":class="{'active':visability=='complte'}" @click="visability='complte'">Completed</a></li>
             </ul>
     </div>
     <div class="clear"></div>
     <div class="container">
-        <div class="bg-box">
-            <div class="bg-title">
-                <input type="checkbox" name="" id=""  ><input type="text" style="width: 300px;" v-model="newtodoTitle">
+        <div class="slidebox" @click="show=!show" :class="{'disappear':show}">
+            <i class="fas fa-plus" style="font-size:20px;" >Add Task</i>
+        </div>
+        <transition name="fade">
+        <div class="bg-box" v-if="show" >
+            <div class="bg-title" >
+                <input type="checkbox" class="checkbox" name="" id=""  ><input type="text" id="title" style="margin-left: 10px; padding:5px; width: 400px;" placeholder="pls type ur title" v-model="newtodoTitle">
                 <div class="icon">
-                    <i class="far fa-star"></i>
+                    <i class="far fa-star "  :class="{'yellow fa':changeColor}" @click="changeColor=!changeColor"></i>
                     <i class="fas fa-pencil-alt"></i>
                 </div>
             </div>
             <div class="bgcontent">
                 <div class="bgtextbox">
+                    <br>
                     <h2><i class="fas fa-calendar-plus"></i>&nbsp Deadline</h2><br>
                     <input type="text" placeholder="YYYY/MM/DD"v-model="newTodoTime1" style="margin-left: 20px"><input type="text" placeholder="HH/MM" style="margin-left: 5px" v-model="newTodoTime2">
                     <br>
                     <br>
-                    <h2><i class="far fa-file"></i>&nbsp File</h2>
+                    <h2><i class="far fa-file" ></i>&nbsp File</h2>
                     <br>
                     <i class="far fa-plus-square" style="padding-left: 25px;
                     font-size: 25px;"></i>
@@ -44,16 +49,18 @@
                     <br>
                     <input type="text" placeholder="Type ur memo" style="margin-left: 20px; width: 400px; padding-bottom: 100px;" v-model="comment">
                 </div>
-                <button @click="remove"><i class="far fa-trash-alt"></i>&nbsp Cancle</button><button @click="add" @:keyup.enter="add"><i class="fas fa-plus"></i>&nbsp Add Task</button>
+                <button @click="cancle"><i class="far fa-trash-alt"></i>&nbsp Cancle</button><button @click="add" @:keyup.enter="add"><i class="fas fa-plus"></i>&nbsp Add Task</button>
             </div>
         </div>
+    </transition>
         <div class="li-list">
             <ul>
-                <li v-for="(item, key) in todo">
-                    <input type="checkbox" name="" :id="item.id">{{item.title}} 
+                
+                <li v-for="(item, key) in filtertodo" >
+                    <input type="checkbox" class="checkbox" name="" :id="item.id" v-model="item.complete"><label for="" :class="{'complete':item.complete}"> {{item.title}} </label>
                     
                     <div class="icon">
-                        <i class="far fa-star"></i>
+                            <i class="far fa-star "  :class="{'yellow fa':changeColor}" @click="changeColor=!changeColor"></i>
                         <i class="fas fa-pencil-alt"></i>
                         <i class="fas fa-trash-alt" @click="remove(key)"></i>
                     </div>
